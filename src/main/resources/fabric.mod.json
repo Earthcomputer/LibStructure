@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "libstructure",
+  "version": "${version}",
+  "name": "Libstructure",
+  "description": "A library allowing mods to easily add structures in 1.16",
+  "authors": [
+    "Earthcomputer"
+  ],
+  "contact": {
+    "sources": "https://github.com/Earthcomputer/libstructure"
+  },
+  "license": "MIT",
+  "icon": "assets/libstructure/icon.png",
+  "environment": "*",
+  "mixins": [
+    "libstructure.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.8.7+build.201",
+    "minecraft": "1.16-rc.5"
+  },
+  "custom": {
+    "modmenu:api": true
+  }
+}
