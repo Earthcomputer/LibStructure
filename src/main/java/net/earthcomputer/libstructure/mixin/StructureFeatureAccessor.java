@@ -14,7 +14,7 @@ import java.util.Map;
 public interface StructureFeatureAccessor {
     @Accessor("field_24861")
     @Mutable
-    static void setPoolStructures(List<StructureFeature<?>> poolStructures) {
+    static void setSurfaceAdjustingStructures(List<StructureFeature<?>> surfaceAdjustingStructures) {
         throw new UnsupportedOperationException();
     }
 

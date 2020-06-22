@@ -34,7 +34,7 @@ public class LibStructure {
         LibStructureImpl.upToDateConfigs.clear();
     }
 
-    public static <FC extends FeatureConfig, F extends StructureFeature<FC>> void registerStructureWithPool(
+    public static <FC extends FeatureConfig, F extends StructureFeature<FC>> void registerSurfaceAdjustingStructure(
             Identifier id,
             F structure,
             GenerationStep.Feature step,
@@ -42,10 +42,27 @@ public class LibStructure {
             ConfiguredStructureFeature<FC, ? extends StructureFeature<FC>> superflatFeature
     ) {
         registerStructure(id, structure, step, defaultStructureConfig, superflatFeature);
-        StructureFeatureAccessor.setPoolStructures(ImmutableList.<StructureFeature<?>>builder()
+        StructureFeatureAccessor.setSurfaceAdjustingStructures(ImmutableList.<StructureFeature<?>>builder()
                 .addAll(StructureFeature.field_24861)
                 .add(structure)
                 .build());
+    }
+
+    /**
+     * @deprecated Bad, misleading name. If your structure requires surface adjustment, use
+     * {@link #registerSurfaceAdjustingStructure(Identifier, StructureFeature, GenerationStep.Feature, StructureConfig, ConfiguredStructureFeature)}
+     * if your structure needs to adjust the surface noise map, otherwise use
+     * {@link #registerStructure(Identifier, StructureFeature, GenerationStep.Feature, StructureConfig, ConfiguredStructureFeature)}.
+     */
+    @Deprecated
+    public static <FC extends FeatureConfig, F extends StructureFeature<FC>> void registerStructureWithPool(
+            Identifier id,
+            F structure,
+            GenerationStep.Feature step,
+            StructureConfig defaultStructureConfig,
+            ConfiguredStructureFeature<FC, ? extends StructureFeature<FC>> superflatFeature
+    ) {
+        registerSurfaceAdjustingStructure(id, structure, step, defaultStructureConfig, superflatFeature); // what it was before
     }
 
 }
