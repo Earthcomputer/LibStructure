@@ -8,8 +8,8 @@ public void onInitialize() {
     VillageFeature feature = new VillageFeature(StructurePoolFeatureConfig.CODEC);
     StructurePoolFeatureConfig plainsConfig = new StructurePoolFeatureConfig(new Identifier("village/plains/town_centers"), 6);
     ConfiguredStructureFeature<StructurePoolFeatureConfig, ? extends StructureFeature<StructurePoolFeatureConfig>> plainsFeature = feature.configure(plainsConfig);
-    // If the structure contains jigsaw pools, use the -WithPool register method, otherwise use the normal one.
-    LibStructure.registerStructureWithPool(new Identifier("libstructure", "teststructure"), feature, GenerationStep.Feature.SURFACE_STRUCTURES, new StructureConfig(32, 8, 12345), plainsFeature);
+    // If the structure needs to adjust the surface terrain to make it look better, use the surface-adjusting register method, otherwise use the normal one.
+    LibStructure.registerSurfaceAdjustingStructure(new Identifier("libstructure", "teststructure"), feature, GenerationStep.Feature.SURFACE_STRUCTURES, new StructureConfig(32, 8, 12345), plainsFeature);
     Biomes.MUSHROOM_FIELDS.addStructureFeature(plainsFeature);
 }
 ``` 
