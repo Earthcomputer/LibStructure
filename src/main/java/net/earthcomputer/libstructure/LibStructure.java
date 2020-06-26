@@ -24,13 +24,21 @@ public class LibStructure {
             ConfiguredStructureFeature<FC, ? extends StructureFeature<FC>> superflatFeature
     ) {
         StructureFeatureAccessor.callRegister(id.toString(), structure, step);
+
+        if (!id.toString().equals(structure.getName())) {
+            // mods should not be overriding getName, but if they do and it's incorrect, this gives an error
+            throw new IllegalStateException("Structure " + id + " has mismatching name " + structure.getName() + ". Structures should not override getName.");
+        }
+
         StructuresConfigAccessor.setDefaultStructures(ImmutableMap.<StructureFeature<?>, StructureConfig>builder()
                 .putAll(StructuresConfig.DEFAULT_STRUCTURES)
                 .put(structure, defaultStructureConfig)
                 .build());
+
         if (superflatFeature != null) {
             FlatChunkGeneratorConfigAccessor.getStructureToFeatures().put(structure, superflatFeature);
         }
+
         LibStructureImpl.upToDateConfigs.clear();
     }
 
