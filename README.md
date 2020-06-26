@@ -25,7 +25,7 @@ repositories {
     }
 }
 dependencies {
-    modImplementation 'net.earthcomputer:libstructure:1.0' // Or the latest version
-    include 'net.earthcomputer:libstructure:1.0'
+    modImplementation 'net.earthcomputer:libstructure:1.3' // Or the latest version
+    include 'net.earthcomputer:libstructure:1.3'
 }
 ```
