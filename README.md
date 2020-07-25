@@ -33,4 +33,4 @@ dependencies {
 
 ### Latest Versions
 - Minecraft 1.16-pre5 to 20w28a, including 1.16 and 1.16.1 --- LibStructure 1.3
-- Minecraft 20w29a onwards --- LibStructure 1.4
+- Minecraft 20w29a onwards --- LibStructure 1.4.1
