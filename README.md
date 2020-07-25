@@ -1,6 +1,7 @@
+# LibStructure
 A library to register modded structures in 1.16. Currently requires 1.16-pre5.
 
-##Example usage
+## Example usage
 ```java
 public void onInitialize() {
     System.out.println("Initializing libstructure test");
@@ -15,7 +16,7 @@ public void onInitialize() {
 ``` 
 For more information on how to create structures see the fabric wiki. The only other difference is that you shouldn't override `getName()`.
 
-##Installation
+## Installation
 Put this in your build.gradle:
 ```groovy
 repositories {
@@ -25,7 +26,11 @@ repositories {
     }
 }
 dependencies {
-    modImplementation 'net.earthcomputer:libstructure:1.3' // Or the latest version
-    include 'net.earthcomputer:libstructure:1.3'
+    modImplementation 'net.earthcomputer:libstructure:1.4' // Use the version for the latest version table below
+    include 'net.earthcomputer:libstructure:1.4'
 }
 ```
+
+### Latest Versions
+- Minecraft 1.16-pre5 to 20w28a, including 1.16 and 1.16.1 --- LibStructure 1.3
+- Minecraft 20w29a onwards --- LibStructure 1.4
