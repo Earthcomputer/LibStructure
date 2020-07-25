@@ -23,6 +23,9 @@ public class LibStructure {
             StructureConfig defaultStructureConfig,
             ConfiguredStructureFeature<FC, ? extends StructureFeature<FC>> superflatFeature
     ) {
+        // Ensure StructuresConfig class loaded, so the assertion in its static {} block doesn't fail
+        StructuresConfig.class.getName();
+
         StructureFeatureAccessor.callRegister(id.toString(), structure, step);
 
         if (!id.toString().equals(structure.getName())) {

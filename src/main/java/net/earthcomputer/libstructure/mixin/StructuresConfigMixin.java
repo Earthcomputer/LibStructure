@@ -38,8 +38,8 @@ public class StructuresConfigMixin implements IStructuresConfig {
         refresh();
     }
 
-    @Inject(method = "method_28600", at = @At("HEAD"))
-    private void onGetConfig(StructureFeature<?> structureFeature, CallbackInfoReturnable<StructureConfig> ci) {
+    @Inject(method = "getForType", at = @At("HEAD"))
+    private void onGetForType(StructureFeature<?> structureFeature, CallbackInfoReturnable<StructureConfig> ci) {
         refresh();
     }
 

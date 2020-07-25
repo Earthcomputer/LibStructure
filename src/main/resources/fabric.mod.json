@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "libstructure",
   "version": "${version}",
-  "name": "Libstructure",
-  "description": "A library allowing mods to easily add structures in 1.16",
+  "name": "LibStructure",
+  "description": "A library allowing mods to easily add structures in 1.16+",
   "authors": [
     "Earthcomputer"
   ],
@@ -18,7 +18,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.8.7+build.201",
-    "minecraft": ">=1.16-rc.5"
+    "minecraft": ">=1.16.2-alpha.20.29.a"
   },
   "custom": {
     "modmenu:api": true

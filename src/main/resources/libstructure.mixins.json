@@ -3,7 +3,7 @@
   "package": "net.earthcomputer.libstructure.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "ChunkGeneratorTypePresetMixin",
+    "ChunkGeneratorTypeMixin",
     "FlatChunkGeneratorConfigAccessor",
     "StructureFeatureAccessor",
     "StructuresConfigAccessor",
